@@ -1,6 +1,8 @@
 ---
 import Footer from "@components/site/common/Footer.astro";
 import TopBar from "@components/site/common/TopBar.astro";
+
+const { title = 'Secretplan'} = Astro.props;
 ---
 
 <html lang="en">
@@ -9,7 +11,7 @@ import TopBar from "@components/site/common/TopBar.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
 	</head>
 	<body class="dark:bg-black dark:text-white"></body>
 	  <div class="max-w-5xl px-4 py-4 mx-auto">
