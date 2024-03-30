@@ -4,6 +4,7 @@ import PocketBase from 'pocketbase'
 import LayoutApp from '@layouts/LayoutApp.astro'
 
 import ProjectCard from '@components/app/projects/ProjectCard.astro'
+import AddNewProjectCard from '@components/app/projects/AddNewProjectCard.astro'
 
 
 const pb = new PocketBase('http://127.0.0.1:8090')
@@ -16,12 +17,12 @@ const projects = await pb
 ---
 
 <LayoutApp title='Dashboard'>
-     <div class='py-10 mx-auto text-white max-w-7xl space-y-6'>
+   <div class='py-10 mx-auto text-white max-w-7xl space-y-6'>
      <div
        class='rounded-lg bg-zinc-900 px-5 py-4 sm:py-2.5 text-xl sm:text-3xl md:text-5xl text-white uppercase text-center font-extrabold'>
        Projects
      </div>
-      <ul>
+    <div class='space-y-6'>
       <ul class='grid gap-6 sm:grid-cols-2'>
         {
           projects.map(project => (
@@ -29,5 +30,6 @@ const projects = await pb
           ))
         }
       </ul>
-  </div>
+      <AddNewProjectCard />
+      </div>     
 </LayoutApp>
