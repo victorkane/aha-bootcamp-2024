@@ -1,4 +1,5 @@
 ---
+import LayoutApp from '@layouts/LayoutApp.astro';
 import PocketBase from 'pocketbase';
 
 const pb = new PocketBase('http://127.0.0.1:8090');
@@ -8,6 +9,8 @@ const projects = await pb.collection('projects').getFullList();
 console.log(projects);
 ---
 
-<ul>
-  {projects.map((project) => <li>{project.name}</li>)}
-</ul>
+<LayoutApp title="Dashboard">
+  <ul>
+    {projects.map((project) => <li>{project.name}</li>)}
+  </ul>
+</LayoutApp>
