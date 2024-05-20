@@ -1,11 +1,13 @@
 ---
+export const prerender = true;
+
 import LayoutSite from '../layouts/LayoutSite.astro';
 
 import { getCollection } from 'astro:content';
 let posts = await getCollection('blog');
 
 posts = posts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
-// console.log('posts', posts);
+console.log('posts', posts);
 ---
 
 <LayoutSite title={'Blog'}>
