@@ -1,4 +1,5 @@
 ---
+import AddNewProjectCard from '@components/app/projects/AddNewProjectCard.astro';
 import ProjectCard from '@components/app/projects/ProjectCard.astro';
 import LayoutApp from '@layouts/LayoutApp.astro';
 import PocketBase from 'pocketbase';
@@ -18,9 +19,12 @@ const projects = await pb.collection('projects').getFullList();
       >
         Projects
       </div>
-      <ul class="grid gap-6 sm:grid-cols-2">
-        {projects.map((project) => <ProjectCard project={project} />)}
-      </ul>
+      <div class="space-y-6">
+        <ul class="grid gap-6 sm:grid-cols-2">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </ul>
+        <AddNewProjectCard />
+      </div>
     </div>
   </div>
 </LayoutApp>
