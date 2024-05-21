@@ -7,3 +7,12 @@ export async function getProjects() {
 
   return projects;
 }
+
+export async function addProject(name: string) {
+  const newProject = await pb.collection('projects').create({
+    name,
+    status: 'not started',
+  });
+
+  return newProject;
+}
