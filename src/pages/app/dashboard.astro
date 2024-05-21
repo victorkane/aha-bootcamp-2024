@@ -2,11 +2,10 @@
 import AddNewProjectCard from '@components/app/projects/AddNewProjectCard.astro';
 import ProjectCard from '@components/app/projects/ProjectCard.astro';
 import LayoutApp from '@layouts/LayoutApp.astro';
-import PocketBase from 'pocketbase';
 
-const pb = new PocketBase('http://127.0.0.1:8090');
+import { getProjects } from '@data/pocketbase';
 
-const projects = await pb.collection('projects').getFullList();
+const projects = await getProjects();
 
 // console.log(projects);
 ---
