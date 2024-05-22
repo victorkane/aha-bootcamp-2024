@@ -31,3 +31,13 @@ export async function addTask(project_id: string, text: string) {
 
   return newTask;
 }
+
+export async function getTasks(project_id: string) {
+  const options = {
+    filter: `project = "${project_id}"`,
+  };
+
+  const tasks = await pb.collection('tasks').getFullList(options);
+
+  return tasks;
+}
