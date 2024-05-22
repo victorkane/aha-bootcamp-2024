@@ -1,6 +1,7 @@
 ---
 import LayoutApp from '@layouts/LayoutApp.astro';
 import { getProject } from '@data/pocketbase';
+import ButtonAddNewTask from '@components/app/tasks/ButtonAddNewTask.astro';
 
 const { project_id = '' } = Astro.params;
 
@@ -18,5 +19,13 @@ if (!project) {
     >
       {project.name}
     </div>
-  </div>
-</LayoutApp>
+    <div class="space-y-6">
+      <div class="p-10 text-white rounded-lg shadow bg-zinc-100 dark:bg-zinc-800">
+        <h2 class="pb-10 text-xl font-black text-center uppercase text-zinc-800 dark:text-white">
+          Tasks to do
+        </h2>
+        <ButtonAddNewTask project_id={project_id} < div />
+      </div>
+    </div>
+  </div></LayoutApp
+>
