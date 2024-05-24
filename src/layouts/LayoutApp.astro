@@ -30,17 +30,6 @@ const { title = 'Secretplan' } = Astro.props;
 
       htmx.process(document.body);
     </script>
-
-    <style>
-      dialog::backdrop {
-        background-color: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(3px);
-      }
-      [x-cloak] {
-        /* fix alpine js flicker on load */
-        display: none;
-      }
-    </style>
   </head>
 
   <body x-data>
