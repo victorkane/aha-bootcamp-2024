@@ -3,6 +3,7 @@ import LayoutApp from '@layouts/LayoutApp.astro';
 import { getProject, getTasks } from '@data/pocketbase';
 import ButtonAddNewTask from '@components/app/tasks/ButtonAddNewTask.astro';
 import HamburgerMenuButton from '@components/app/HamburgerMenuButton.astro';
+import ProjectStatus from '@components/app/projects/ProjectStatus.astro';
 
 const { project_id = '' } = Astro.params;
 
@@ -24,6 +25,16 @@ const tasks = await getTasks(project_id);
         <HamburgerMenuButton />
       </div>
       {project.name}
+    </div>
+    <div class="flex items-center justify-between mx-auto max-w-7xl">
+      <a href={'/app/dashboard'}>
+        <button type="button" class="text-xl btn-header text-zinc-800 dark:text-white">
+          ◀︎ All your projects
+        </button>
+      </a>
+      <div class="mr-0.5">
+        <ProjectStatus project={project} />
+      </div>
     </div>
     <div class="space-y-6">
       <div class="p-10 text-white rounded-lg shadow bg-zinc-100 dark:bg-zinc-800">
