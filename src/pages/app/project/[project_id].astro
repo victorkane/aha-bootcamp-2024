@@ -24,7 +24,9 @@ const tasks = await getTasks(project_id);
       <div class="sm:hidden">
         <HamburgerMenuButton />
       </div>
-      {project.name}
+      <span hx-get=`/app/modals/project/${project.id}/edit` hx-target="dialog">
+        {project.name}
+      </span>
     </div>
     <div class="flex items-center justify-between mx-auto max-w-7xl">
       <a href={'/app/dashboard'}>
