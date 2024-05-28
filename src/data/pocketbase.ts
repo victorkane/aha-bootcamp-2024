@@ -76,3 +76,7 @@ export async function deleteProject(id: string) {
 export async function updateProject(id: string, data: ProjectsRecord) {
   await pb.collection('projects').update(id, data);
 }
+
+export async function deleteTask(id: string) {
+  await pb.collection('tasks').delete(id);
+}
