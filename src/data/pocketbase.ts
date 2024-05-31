@@ -94,3 +94,14 @@ export async function deleteTask(id: string) {
 export async function updateTask(id: string, data: TasksRecord) {
   await pb.collection('tasks').update(id, data);
 }
+
+export async function getStarredTasks() {
+  const options = {
+    sort: '-starred_on',
+    filter: 'starred = true && completed = false',
+  };
+
+  let tasks = await pb.collection('tasks').getFullList(options);
+
+  return tasks;
+}
