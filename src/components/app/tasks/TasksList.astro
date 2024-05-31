@@ -3,6 +3,7 @@ import { getStarredTasks, getTasks } from '@data/pocketbase';
 import DeleteTaskButton from '@components/app/tasks/DeleteTaskButton.astro';
 import CompleteTaskButton from '@components/app/tasks/CompleteTaskButton.astro';
 import StarTaskButton from '@components/app/tasks/StarTaskButton.astro';
+import TaskText from '@components/app/tasks/TaskText.astro';
 const { project_id, done, starred } = Astro.props;
 
 let tasks = null;
@@ -20,7 +21,7 @@ if (starred) {
   )
 }
 
-<ul class="space-y-6 mb-10">
+<ul class="space-y-6">
   {
     tasks.map((task) => (
       <li>
@@ -31,7 +32,7 @@ if (starred) {
           <div>
             <StarTaskButton task={task} />
           </div>
-          <div class="flex-1">{task.text}</div>
+          <TaskText task={task} />
           {starred ? (
             <div>
               <a href={`/app/project/${task.project}`}>
