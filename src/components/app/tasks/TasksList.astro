@@ -14,7 +14,11 @@ if (starred) {
 }
 ---
 
-{tasks.length === 0 && <p class="text-center text-zinc-900 dark:text-white">Nothing yet</p>}
+{
+  tasks.length === 0 && !starred && (
+    <p class="text-center text-zinc-900 dark:text-white">Nothing yet</p>
+  )
+}
 
 <ul class="space-y-6 mb-10">
   {
