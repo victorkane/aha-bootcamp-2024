@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
+    "@astrojs/check": "^0.7.0",
     "@astrojs/node": "^8.2.5",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/m-plus-rounded-1c": "^5.0.13",
     "@types/alpinejs": "^3.13.10",
     "alpinejs": "^3.13.10",
-    "astro": "^4.7.1",
+    "astro": "^4.9.2",
     "dotenv": "^16.4.5",
     "htmx.org": "^1.9.12",
     "pocketbase": "^0.21.2",
