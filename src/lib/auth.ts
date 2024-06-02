@@ -71,3 +71,9 @@ export async function isLoggedIn(request: Request) {
 
   return false;
 }
+
+export async function getUserUsername(request: Request) {
+  pb.authStore.loadFromCookie(request.headers.get('Cookie') || '', 'pb_auth');
+  // return pb.authStore.model?.username;
+  return pb.authStore.model?.email;
+}
