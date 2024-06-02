@@ -57,6 +57,8 @@ export type TasksRecord = {
 	created_by?: RecordIdString
 	images?: string[]
 	project?: RecordIdString
+	starred?: boolean
+	starred_on?: IsoDateString
 	started?: boolean
 	started_on?: IsoDateString
 	text?: string
